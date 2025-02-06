@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ctime>
+#include <iomanip>
 #define MAX_N 100 
 
 using namespace std;
@@ -20,7 +21,7 @@ for (int i =2; i <=n; i++)
 return (F[n]);
 }
 
-int m[MAX_N]; // Array to store previously calculated Fibonacci numbers
+int m[MAX_N]; // array to store previously calculated Fibonacci numbers
 
 int MODFibR (int n) // array of size n
 {
@@ -40,11 +41,15 @@ int main() {
     int n_values[] = {1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60};
   
     cout << "Fibonacci time analysis (recursive vs. non-recursive)" << endl;
-    cout << "Integer | FiboR (seconds) | MODFibR (seconds) | FiboNR (seconds) | Fibo-value" << endl;
-    cout << "-------------------------------------------------------------" << endl;
+    cout << "------------------------------------------------------------" << endl;
+    cout << left << setw(10) << "Integer" 
+         << setw(20) << "FiboR (seconds)" 
+         << setw(20) << "MODFibR (seconds)" 
+         << setw(20) << "FiboNR (seconds)" 
+         << "Fibo-value" << endl;
+    cout << "------------------------------------------------------------" << endl;
 
     for (int n : n_values) {
-
         clock_t start = clock();
         FiboR(n);
         clock_t end = clock();
@@ -60,10 +65,10 @@ int main() {
         end = clock();
         double timeFiboNR = double(end - start) / CLOCKS_PER_SEC;
 
-        cout << n << "      | "
-             << timeFiboR << "       | "
-             << timeMODFibR << "        | "
-             << timeFiboNR << "         | "
+        cout << left << setw(10) << n 
+             << setw(20) << timeFiboR 
+             << setw(20) << timeMODFibR 
+             << setw(20) << timeFiboNR 
              << MODFibR(n) << endl;
     }
 
