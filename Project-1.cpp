@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <iomanip>
+#include <cmath>
 #define MAX_N 100 
 
 using namespace std;
@@ -66,9 +67,9 @@ int main() {
         double timeFiboNR = double(end - start) / CLOCKS_PER_SEC;
 
         cout << left << setw(10) << n 
-             << setw(20) << timeFiboR 
-             << setw(20) << timeMODFibR 
-             << setw(20) << timeFiboNR 
+             << setw(20) << fixed << setprecision(2) << round(timeFiboR * 100) / 100
+             << setw(20) << fixed << setprecision(2) << round(timeMODFibR * 100) / 100
+             << setw(20) << fixed << setprecision(2) << round(timeFiboNR * 100) / 100
              << MODFibR(n) << endl;
     }
 
