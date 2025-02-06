@@ -35,9 +35,9 @@ int main() {
   
     int n_values[] = {1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60};
   
-    cout << "Fibonacci time analysis (recursive vs. non-recursive)\n";
-    cout << "Integer | FiboR (seconds) | MODFibR (seconds) | FiboNR (seconds) | Fibo-value\n";
-    cout << "-------------------------------------------------------------\n";
+    cout << "Fibonacci time analysis (recursive vs. non-recursive)" << endl;
+    cout << "Integer | FiboR (seconds) | MODFibR (seconds) | FiboNR (seconds) | Fibo-value" << endl;
+    cout << "-------------------------------------------------------------" << endl;
 
     for (int n : n_values) {
 
@@ -60,7 +60,7 @@ int main() {
              << timeFiboR << "       | "
              << timeMODFibR << "        | "
              << timeFiboNR << "         | "
-             << MODFibR(n) << endl; // Print Fibonacci value from MODFibR
+             << MODFibR(n) << endl;
     }
 
     return 0;
