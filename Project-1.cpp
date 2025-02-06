@@ -1,5 +1,7 @@
 #include <iostream>
 #include <ctime>
+#define MAX_N 100 
+
 using namespace std;
 
 int FiboR (int n) // array of size n
@@ -9,8 +11,9 @@ else return (FiboR (n-1) + FiboR(n-2));
 }
 
 int FiboNR (int n) // array of size n
-{int F[max];
-F[0]=0; F[1]=1;
+{int F[MAX_N];
+F[0]=0; 
+F[1]=1;
 for (int i =2; i <=n; i++)
 {F[i] = F[i-1] + F[i-2];
 }
