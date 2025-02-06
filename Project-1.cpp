@@ -22,7 +22,8 @@ return (F[n]);
 
 int m[MAX_N]; // Array to store previously calculated Fibonacci numbers
 
-int MODFibR(int n) {
+int MODFibR (int n) // array of size n
+{
     if (n == 0 || n == 1) {
         return n;
     }
