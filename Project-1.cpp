@@ -45,7 +45,7 @@ int main() {
     cout << "------------------------------------------------------------" << endl;
     cout << left << setw(10) << "Integer" 
          << setw(20) << "FiboR (seconds)" 
-         << setw(20) << "MODFibR (seconds)" 
+         << setw(20) << "MODFibR" 
          << setw(20) << "FiboNR (seconds)" 
          << "Fibo-value" << endl;
     cout << "------------------------------------------------------------" << endl;
@@ -67,9 +67,9 @@ int main() {
         double timeFiboNR = double(end - start) / CLOCKS_PER_SEC;
 
         cout << left << setw(10) << n 
-             << setw(20) << fixed << setprecision(4) << round(timeFiboR * 10000) / 10000
-             << setw(20) << fixed << setprecision(4) << round(timeMODFibR * 10000) / 10000
-             << setw(20) << fixed << setprecision(4) << round(timeFiboNR * 10000) / 10000
+             << setw(20) << fixed << setprecision(4) 
+             << setw(20) << fixed << setprecision(4) 
+             << setw(20) << fixed << setprecision(4)
              << MODFibR(n) << endl;
     }
 
