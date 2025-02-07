@@ -67,9 +67,9 @@ int main() {
         double timeFiboNR = double(end - start) / CLOCKS_PER_SEC;
 
         cout << left << setw(10) << n 
-             << setw(20) << fixed << setprecision(4) 
-             << setw(20) << fixed << setprecision(4) 
-             << setw(20) << fixed << setprecision(4)
+             << setw(20) << fixed << setprecision(4) << timeFiboR 
+             << setw(20) << fixed << setprecision(4) << timeMODFibR
+             << setw(20) << fixed << setprecision(4) << timeFiboNR
              << MODFibR(n) << endl;
     }
 
