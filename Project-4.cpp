@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-#include <chrono>
+#include <ctime>
 #include <algorithm>
 #include <iomanip>
 #include <vector>
@@ -149,8 +149,6 @@ void mergeSort(int A[], int low, int high) {
 }
 
 int main() {
-    using namespace std::chrono;
-
     srand(time(0));
 
     vector<int> input_sizes;
@@ -163,10 +161,12 @@ int main() {
 
     cout << "Input Length\tHeap Sort (seconds)\tInsertion Sort (seconds)\tMerge Sort (seconds)\tBest time" << endl;
 
-    for (int N : input_sizes) {
+    for (size_t i = 0; i < input_sizes.size(); i++) {  
+        int N = input_sizes[i];
+
         int* original = new int[N];
-        for (int i = 0; i < N; i++) {
-            original[i] = rand();
+        for (int j = 0; j < N; j++) {
+            original[j] = rand();
         }
 
         int* arr_heap = new int[N];
@@ -179,20 +179,20 @@ int main() {
 
         double heap_time, insertion_time, merge_time;
 
-        auto start = high_resolution_clock::now();
+        clock_t start = clock();
         heapSort(arr_heap, N);
-        auto end = high_resolution_clock::now();
-        heap_time = duration<double>(end - start).count();
+        clock_t end = clock();
+        heap_time = double(end - start) / CLOCKS_PER_SEC;
 
-        start = high_resolution_clock::now();
+        start = clock();
         insertionSort(arr_insertion, N);
-        end = high_resolution_clock::now();
-        insertion_time = duration<double>(end - start).count();
+        end = clock();
+        insertion_time = double(end - start) / CLOCKS_PER_SEC;
 
-        start = high_resolution_clock::now();
+        start = clock();
         mergeSort(arr_merge, 0, N - 1);
-        end = high_resolution_clock::now();
-        merge_time = duration<double>(end - start).count();
+        end = clock();
+        merge_time = double(end - start) / CLOCKS_PER_SEC;
 
         string best_time = "Heap";
         double min_time = heap_time;
