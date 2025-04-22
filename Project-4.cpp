@@ -209,7 +209,7 @@ int main() {
         cout << N << "\t\t"
              << fixed << setprecision(2) << heap_time << "\t\t\t"
              << fixed << setprecision(2) << insertion_time << "\t\t\t"
-             << fixed << setprecision(2) << merge_time << "\t\t"
+             << fixed << setprecision(2) << merge_time << "\t\t\t"
              << best_time << endl;
 
         delete[] original;
