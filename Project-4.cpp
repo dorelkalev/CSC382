@@ -45,10 +45,10 @@ MinHeap<T>& MinHeap<T>::Insert(T& x) {
 template <class T>
 MinHeap<T>& MinHeap<T>::Delete(T& x) {
     if (Size == 0) throw OutOfBounds();
-    x = heap[1];  // root has the smallest key
-    T y = heap[Size--]; // last element
+    x = heap[1];
+    T y = heap[Size--];
     int vacant = 1;
-    int child = 2; // left child
+    int child = 2;
     while (child <= Size) {
         if (child < Size && heap[child] > heap[child + 1]) 
             child++;
@@ -153,7 +153,13 @@ int main() {
 
     srand(time(0));
 
-    vector<int> input_sizes = {1000, 10000, 25000, 50000, 150000, 250000};
+    vector<int> input_sizes;
+    input_sizes.push_back(1000);
+    input_sizes.push_back(10000);
+    input_sizes.push_back(25000);
+    input_sizes.push_back(50000);
+    input_sizes.push_back(150000);
+    input_sizes.push_back(250000);
 
     cout << "Input Length\tHeap Sort (seconds)\tInsertion Sort (seconds)\tMerge Sort (seconds)\tBest time" << endl;
 
