@@ -159,7 +159,13 @@ int main() {
     input_sizes.push_back(150000);
     input_sizes.push_back(250000);
 
-    cout << "Input Length\tHeap Sort (seconds)\tInsertion Sort (seconds)\tMerge Sort (seconds)\tBest time" << endl;
+    cout << left 
+         << setw(15) << "Input Length" 
+         << setw(20) << "Heap Sort (seconds)" 
+         << setw(25) << "Insertion Sort (seconds)" 
+         << setw(20) << "Merge Sort (seconds)" 
+         << setw(15) << "Best time" 
+         << endl;
 
     for (size_t i = 0; i < input_sizes.size(); i++) {  
         int N = input_sizes[i];
@@ -206,11 +212,13 @@ int main() {
             best_time = "Merge";
         }
 
-        cout << N << "\t\t"
-             << fixed << setprecision(2) << heap_time << "\t\t\t"
-             << fixed << setprecision(2) << insertion_time << "\t\t\t"
-             << fixed << setprecision(2) << merge_time << "\t\t\t"
-             << best_time << endl;
+        cout << left << setw(15) << N 
+             << right << fixed << setprecision(2) 
+             << setw(20) << heap_time 
+             << setw(25) << insertion_time 
+             << setw(20) << merge_time 
+             << left << setw(15) << best_time 
+             << endl;
 
         delete[] original;
         delete[] arr_heap;
