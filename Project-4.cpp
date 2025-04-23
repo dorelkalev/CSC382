@@ -216,7 +216,7 @@ int main() {
              << setw(20) << N 
              << setw(20) << fixed << setprecision(2) << heap_time 
              << setw(20) << insertion_time 
-             << setw(20) << merge_time 
+             << setw(24) << merge_time 
              << setw(20) << best_time 
              << endl;
 
