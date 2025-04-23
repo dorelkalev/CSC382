@@ -160,11 +160,11 @@ int main() {
     input_sizes.push_back(250000);
 
     cout << left 
-         << setw(15) << "Input Length" 
+         << setw(20) << "Input Length" 
          << setw(20) << "Heap Sort (seconds)" 
-         << setw(25) << "Insertion Sort (seconds)" 
+         << setw(20) << "Insertion Sort (seconds)" 
          << setw(20) << "Merge Sort (seconds)" 
-         << setw(15) << "Best time" 
+         << setw(20) << "Best time" 
          << endl;
 
     for (size_t i = 0; i < input_sizes.size(); i++) {  
@@ -212,11 +212,12 @@ int main() {
             best_time = "Merge";
         }
 
-        cout << left << setw(15) << N 
+        cout << left 
+             << setw(20) << N 
              << setw(20) << fixed << setprecision(2) << heap_time 
-             << setw(25) << insertion_time 
+             << setw(20) << insertion_time 
              << setw(20) << merge_time 
-             << setw(15) << best_time 
+             << setw(20) << best_time 
              << endl;
 
         delete[] original;
