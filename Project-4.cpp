@@ -213,11 +213,10 @@ int main() {
         }
 
         cout << left << setw(15) << N 
-             << right << fixed << setprecision(2) 
-             << setw(20) << heap_time 
+             << setw(20) << fixed << setprecision(2) << heap_time 
              << setw(25) << insertion_time 
              << setw(20) << merge_time 
-             << left << setw(15) << best_time 
+             << setw(15) << best_time 
              << endl;
 
         delete[] original;
