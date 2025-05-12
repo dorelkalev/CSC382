@@ -16,7 +16,7 @@ private:
     node* headnodes;     
     vector<bool> visited;
     vector<int> parent;
-    vector<pair<int,int>> cycleEdges;
+    vector<pair<int,int> > cycleEdges;
     bool cycleFound;
 
     bool dfsCycle(int v) {
